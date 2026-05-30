@@ -76,7 +76,7 @@
       {
         title: 'Contact',
         contact: [
-          { icon: 'ti-mail',    text: 'info@techmeolgroup.com'          },
+          { icon: 'ti-mail',    text: 'contact@techmeol.com'          },
           { icon: 'ti-phone',   text: '+1 (800) 000-0000'               },
           { icon: 'ti-map-pin', text: 'United States<br>Nationwide Service' },
      
