@@ -23,8 +23,7 @@
       label: 'Distributor',
       href:  '#',
       children: [
-        { label: 'National Instruments Leasing Page', href: '#'                                    },
-        { label: 'HIRAYAMA HAST',                     href: '#'                                    },
+        { label: 'Eneron', href: 'https://zacsemi.com.mx/eneron/'                                    },
         { label: 'Visit eBay Store',                  href: 'https://www.ebay.com/str/esurplusinc2?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=dqmyxmowsmm&sssrc=3418065&ssuid=dqmyxmowsmm&stype=1&widget_ver=artemis&media=COPY', ext: true      },
       ],
     },
