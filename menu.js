@@ -18,18 +18,19 @@
     { label: 'About',     href: '/about-us'           },
     { label: 'Solutions', href: '/solutions'          },
     { label: 'Services',  href: '/tmg-services'       },
+     { label: 'Zac Tech Semi',  href: 'https://zacsemi.com.mx/'       },
     {
       label: 'Distributor',
       href:  '#',
       children: [
         { label: 'National Instruments Leasing Page', href: '#'                                    },
         { label: 'HIRAYAMA HAST',                     href: '#'                                    },
-        { label: 'Visit eBay Store',                  href: 'https://www.ebay.com', ext: true      },
+        { label: 'Visit eBay Store',                  href: 'https://www.ebay.com/str/esurplusinc2?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=dqmyxmowsmm&sssrc=3418065&ssuid=dqmyxmowsmm&stype=1&widget_ver=artemis&media=COPY', ext: true      },
       ],
     },
   ];
 
-  const NAV_CTA = { label: 'Let us help you', href: 'mailto:techmeolteam@gmail.com' };
+  const NAV_CTA = { label: 'Let us help you', href: 'mailto:contact@techmeol.com' };
 
   const FOOTER = {
     topBand: {
@@ -51,12 +52,14 @@
       {
         title: 'Services',
         links: [
-          { label: 'Small Package Shipment', href: '/tmg-services' },
-          { label: 'LTL & FTL Freight',      href: '/tmg-services' },
-          { label: 'eBay Store & Inventory', href: '/tmg-services' },
-          { label: 'Inventory Pick-Up',      href: '/tmg-services' },
-          { label: 'Asset Valuation',        href: '/tmg-services' },
-          { label: 'Comparative Analysis',   href: '/solutions#analysis' },
+          { label: 'WareHousing', href: '/tmg-services' },
+          { label: 'Logistics',      href: '/tmg-services' },
+          { label: 'Rigging', href: '/tmg-services' },
+          { label: 'Valuation',      href: '/tmg-services' },
+          { label: 'Crating / Packaging',        href: '/tmg-services' },
+          { label: 'Costs & Fees are Credited from Proceeds',        href: '/tmg-services' },
+          { label: 'Monetize',        href: '/tmg-services' },
+          { label: 'BUYER pays',        href: '/tmg-services' },
         ],
       },
       {
@@ -66,8 +69,8 @@
           { label: 'Solutions',     href: '/solutions' },
           { label: 'Why Tech Meol', href: '/#stats'    },
           { label: 'Industries',    href: '#'          },
-          { label: 'Careers',       href: '#'          },
-          { label: 'Contact',       href: '/contact'   },
+  
+          { label: 'Contact',       href: 'mailto:contact@techmeol.com'   },
         ],
       },
       {
@@ -76,7 +79,7 @@
           { icon: 'ti-mail',    text: 'info@techmeolgroup.com'          },
           { icon: 'ti-phone',   text: '+1 (800) 000-0000'               },
           { icon: 'ti-map-pin', text: 'United States<br>Nationwide Service' },
-          { icon: 'ti-clock',   text: 'Mon–Fri · 8am–6pm PST'          },
+     
         ],
       },
     ],

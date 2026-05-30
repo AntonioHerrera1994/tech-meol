@@ -19,15 +19,14 @@
     els.forEach((el) => obs.observe(el));
   }
 
-  /* ── Accordion + live image swap ── */
+  /* ── Accordion — label updates only, no image swap ── */
   function initAccordion() {
-    const items   = document.querySelectorAll('.acc-item');
-    const label   = document.getElementById('svc-active-label');
+    const items = document.querySelectorAll('.acc-item');
+    const label = document.getElementById('svc-active-label');
 
     items.forEach((item) => {
       const btn  = item.querySelector('.acc-header');
       const body = item.querySelector('.acc-body');
-      const key  = item.dataset.img;
 
       btn.addEventListener('click', () => {
         const isOpen = btn.classList.contains('active');
@@ -38,33 +37,33 @@
           i.querySelector('.acc-body').classList.remove('open');
         });
 
-        /* Open clicked (unless already open) */
         if (!isOpen) {
+          /* Open clicked item */
           btn.classList.add('active');
           body.classList.add('open');
-          swapImage(key, btn.querySelector('.acc-label').textContent.trim());
+          updateLabel(btn.querySelector('.acc-label').textContent.trim());
         } else {
-          /* If closed, revert to first */
+          /* Clicking open item closes it — revert label to first */
           const first = items[0];
           first.querySelector('.acc-header').classList.add('active');
           first.querySelector('.acc-body').classList.add('open');
-          swapImage(items[0].dataset.img, items[0].querySelector('.acc-label').textContent.trim());
+          updateLabel(first.querySelector('.acc-label').textContent.trim());
         }
       });
     });
 
-    function swapImage(key, labelText) {
-      /* Hide all images */
-      document.querySelectorAll('.svc-img').forEach((img) => img.classList.remove('active'));
-      /* Show target */
-      const target = document.getElementById('img-' + key);
-      if (target) target.classList.add('active');
-      /* Update label */
-      if (label) label.textContent = labelText;
+    function updateLabel(text) {
+      if (!label) return;
+      /* Fade out → swap text → fade in */
+      label.style.opacity = '0';
+      setTimeout(() => {
+        label.textContent = text;
+        label.style.opacity = '1';
+      }, 180);
     }
   }
 
-  /* ── Smooth scroll for anchor links (in case navbar.js not loaded yet) ── */
+  /* ── Smooth scroll ── */
   function initScroll() {
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
       a.addEventListener('click', function (e) {
@@ -80,7 +79,7 @@
     });
   }
 
-  /* ── Footer year (fallback) ── */
+  /* ── Footer year ── */
   function initYear() {
     const el = document.getElementById('footerYear');
     if (el) el.textContent = new Date().getFullYear();
