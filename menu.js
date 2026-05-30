@@ -29,13 +29,13 @@
     },
   ];
 
-  const NAV_CTA = { label: 'Get in Touch', href: '/contact' };
+  const NAV_CTA = { label: 'Let us help you', href: 'mailto:techmeolteam@gmail.com' };
 
   const FOOTER = {
     topBand: {
       text:   'Ready to convert your surplus assets into capital? Our team responds within 24 hours.',
       strong: 'Ready to convert your surplus assets into capital?',
-      cta:    { label: 'Get in Touch', href: '/contact' },
+      cta:    { label: 'Let us help you', href: 'mailto:contact@techmeol.com' },
     },
     brand: {
       desc:  'Established as your source to quickly link the liquidity of your surplus assets into your mainstream of production — throughout the lifetime of your equipment.',

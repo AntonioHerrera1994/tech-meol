@@ -139,7 +139,7 @@ ul { list-style: none; }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 5.5vw, 5.5rem);
+  font-size: clamp(2rem, 5.5vw, 5rem);
   font-weight: 300;
   color: var(--white);
   line-height: 1.06;
@@ -745,8 +745,8 @@ ul { list-style: none; }
 #cta .body-text,
 #cta .hero-btns { position: relative; z-index: 1; }
 
-#cta .section-title { font-size: clamp(2.2rem, 4.5vw, 3.5rem); max-width: 680px; margin-bottom: 1.2rem; }
-#cta .body-text { max-width: 460px; margin-bottom: 2.5rem; }
+#cta .section-title { font-size: clamp(2.2rem, 4.5vw, 3.5rem); max-width: 800px; margin-bottom: 1.2rem; }
+#cta .body-text { max-width: 500px; margin-bottom: 2.5rem; }
 
 
 /* ══════════════════════════════════════
