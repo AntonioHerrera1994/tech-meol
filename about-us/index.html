@@ -282,6 +282,129 @@ Our goal goes beyond just finding a new home for your unused gear. We want to he
     </div><!-- /tab-panels -->
   </section>
 
+<!-- ══════════════════════════════════════
+       CASE STUDY — Real import case
+       ══════════════════════════════════════ -->
+  <section id="case-study">
+
+    <div class="case-header reveal">
+      <p class="eyebrow">Real Case</p>
+      <h2 class="section-title">From California to Jalisco,<br /><em>Door to Door</em></h2>
+      <p class="case-lead">
+        A real example of what Tech Meol Group does best — sourcing, coordinating,
+        and delivering industrial equipment across borders with full documentation
+        and zero surprises.
+      </p>
+    </div>
+
+    <!-- Route bar -->
+    <div class="case-route reveal">
+      <div class="route-point">
+        <div class="route-dot route-dot--origin"></div>
+        <div class="route-info">
+          <span class="route-label">Origin</span>
+          <strong>San Ramon, CA</strong>
+          <span class="route-sub">United States</span>
+        </div>
+      </div>
+
+      <div class="route-line">
+        <div class="route-line-track">
+          <div class="route-line-fill"></div>
+          <div class="route-plane">✈</div>
+        </div>
+        <div class="route-stats">
+          <span><i class="ti ti-package"></i> Industrial Equipment</span>
+          <span><i class="ti ti-file-check"></i> Fully Documented</span>
+          <span><i class="ti ti-shield-check"></i> Customs Cleared</span>
+        </div>
+      </div>
+
+      <div class="route-point route-point--dest">
+        <div class="route-dot route-dot--dest"></div>
+        <div class="route-info">
+          <span class="route-label">Destination</span>
+          <strong>Zapopan, Jalisco</strong>
+          <span class="route-sub">México</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery grid — replace /assets/caseN.webp with real photos -->
+    <div class="case-gallery reveal">
+
+      <div class="gallery-item gallery-item--wide">
+        <img src="/about-us/imagenes/caso1.jpeg" alt="Equipment ready for shipping" loading="lazy" />
+        <div class="gallery-caption">Equipment prep &amp; staging</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/about-us/imagenes/caso1-2.jpeg" alt="Crating process" loading="lazy" />
+        <div class="gallery-caption">Professional crating</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/about-us/imagenes/caso1-3.jpeg" alt="Loading freight" loading="lazy" />
+        <div class="gallery-caption">Freight loading</div>
+      </div>
+
+      <div class="gallery-item gallery-item--tall">
+        <img src="/about-us/imagenes/caso1-4.jpeg" alt="In transit" loading="lazy" />
+        <div class="gallery-caption">In transit</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/about-us/imagenes/caso1-5.jpeg" alt="Customs documentation" loading="lazy" />
+        <div class="gallery-caption">Customs clearance</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/about-us/imagenes/caso1-6.jpeg" alt="Arrival in Mexico" loading="lazy" />
+        <div class="gallery-caption">Arrival &amp; unloading</div>
+      </div>
+
+      <div class="gallery-item gallery-item--wide">
+        <img src="/about-us/imagenes/caso1-7.jpeg" alt="Final delivery" loading="lazy" />
+        <div class="gallery-caption">Final delivery &amp; installation</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/about-us/imagenes/caso1-8.jpeg" alt="Client handoff" loading="lazy" />
+        <div class="gallery-caption">Client handoff</div>
+      </div>
+
+       <div class="gallery-item">
+        <img src="/about-us/imagenes/caso1-9.jpeg" alt="Client handoff" loading="lazy" />
+        <div class="gallery-caption">Client handoff</div>
+      </div>
+
+       <div class="gallery-item">
+        <img src="/about-us/imagenes/caso1-10.jpeg" alt="Client handoff" loading="lazy" />
+        <div class="gallery-caption">Client handoff</div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="case-cta reveal">
+      <p>Ready to move your equipment? We handle every step — from pickup to delivery.</p>
+      <a href="mailto:contact@techmeol.com" class="btn btn-primary">Start Your Shipment</a>
+    </div>
+
+  </section>
+
+  <!-- ── Lightbox modal ── -->
+  <div id="caseModal" class="cs-modal" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="cs-modal-close" id="caseModalClose" aria-label="Close">✕</button>
+    <button class="cs-modal-prev"  id="caseModalPrev"  aria-label="Previous">&#8592;</button>
+    <button class="cs-modal-next"  id="caseModalNext"  aria-label="Next">&#8594;</button>
+    <div class="cs-modal-inner">
+      <img id="caseModalImg" src="" alt="" />
+      <p id="caseModalCaption" class="cs-modal-caption"></p>
+    </div>
+  </div>
+
+ 
   <!-- ══════════════════════════════════════
        SECTION 4 — QUOTE CTA (circuit board bg)
        ══════════════════════════════════════ -->
@@ -306,3 +429,75 @@ We'll keep you informed on your equipment's true value every step of the way, an
    <script src="/menu.js"></script>
 </body>
 </html>
+
+ <script>
+  (function () {
+    const items    = Array.from(document.querySelectorAll('.gallery-item'));
+    const modal    = document.getElementById('caseModal');
+    const modalImg = document.getElementById('caseModalImg');
+    const modalCap = document.getElementById('caseModalCaption');
+    const btnClose = document.getElementById('caseModalClose');
+    const btnPrev  = document.getElementById('caseModalPrev');
+    const btnNext  = document.getElementById('caseModalNext');
+    let current    = 0;
+
+    function open(index) {
+      current = index;
+      const img = items[index].querySelector('img');
+      const cap = items[index].querySelector('.gallery-caption');
+      modalImg.src = img ? img.src : '';
+      modalImg.alt = img ? img.alt : '';
+      modalCap.textContent = cap ? cap.textContent : '';
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => { modalImg.src = ''; }, 300);
+    }
+
+    function step(dir) {
+      current = (current + dir + items.length) % items.length;
+      /* Fade img swap */
+      modalImg.style.opacity = '0';
+      setTimeout(() => {
+        const img = items[current].querySelector('img');
+        const cap = items[current].querySelector('.gallery-caption');
+        modalImg.src = img ? img.src : '';
+        modalImg.alt = img ? img.alt : '';
+        modalCap.textContent = cap ? cap.textContent : '';
+        modalImg.style.opacity = '1';
+      }, 180);
+    }
+
+    /* Click on any gallery item */
+    items.forEach((item, i) => item.addEventListener('click', () => open(i)));
+
+    btnClose.addEventListener('click', close);
+    btnPrev.addEventListener ('click', () => step(-1));
+    btnNext.addEventListener ('click', () => step( 1));
+
+    /* Click outside inner → close */
+    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+
+    /* Keyboard nav */
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'Escape')     close();
+      if (e.key === 'ArrowLeft')  step(-1);
+      if (e.key === 'ArrowRight') step( 1);
+    });
+
+    /* Touch swipe */
+    let touchX = null;
+    modal.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+    modal.addEventListener('touchend',   (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+      touchX = null;
+    });
+  })();
+  </script>
