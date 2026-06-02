@@ -24,7 +24,7 @@
       href:  '#',
       children: [
         { label: 'Eneron', href: 'https://zacsemi.com.mx/eneron/'                                    },
-        { label: 'Visit eBay Store',                  href: 'https://www.ebay.com/str/esurplusinc2?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=dqmyxmowsmm&sssrc=3418065&ssuid=dqmyxmowsmm&stype=1&widget_ver=artemis&media=COPY', ext: true      },
+        { label: 'Visit eBay Store',                  href: 'https://www.ebay.com/str/esurplusinc2?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=dqmyxmowsmm&sssrc=3418065&ssuid=dqmyxmowsmm&stype=1&widget_ver=artemis&media=COPY', ext: true},
       ],
     },
   ];
@@ -42,10 +42,10 @@
       badge: 'Certified Business Partner',
     },
     socials: [
-      { icon: 'ti-brand-linkedin', label: 'LinkedIn',   href: '#' },
-      { icon: 'ti-shopping-bag',   label: 'eBay Store', href: '#' },
-      { icon: 'ti-mail',           label: 'Email',      href: '#' },
-      { icon: 'ti-phone',          label: 'Phone',      href: '#' },
+      { icon: 'ti-brand-linkedin', label: 'LinkedIn',   href: 'https://www.linkedin.com/groups/14466684/', ext: true  },
+      { icon: 'ti-shopping-bag',   label: 'eBay Store', href: 'https://www.ebay.com/str/esurplusinc2?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=dqmyxmowsmm&sssrc=3418065&ssuid=dqmyxmowsmm&stype=1&widget_ver=artemis&media=COPY' , ext: true },
+      { icon: 'ti-mail',           label: 'Email',      href: 'mailto:contact@techmeol.com' },
+      { icon: 'ti-phone',          label: 'Phone',      href: 'tel:+14084939296' },
     ],
     cols: [
       {
@@ -76,7 +76,7 @@
         title: 'Contact',
         contact: [
           { icon: 'ti-mail',    text: 'contact@techmeol.com'          },
-          { icon: 'ti-phone',   text: '+1 (800) 000-0000'               },
+          { icon: 'ti-phone',   text: '+1 (408) 493-9296'               },
           { icon: 'ti-map-pin', text: 'United States<br>Nationwide Service' },
      
         ],
@@ -554,7 +554,7 @@
     const bandCta = el('a', { href: f.topBand.cta.href, cls: 'footer-top-cta', html: `<i class="ti ti-mail" aria-hidden="true"></i> ${f.topBand.cta.label}` });
     const topBand = el('div', { cls: 'footer-top-band' }, bandText, bandCta);
 
-    const logo    = el('span', { cls: 'footer-logo', html: `Tech<span class="lo">Meol</span><span class="ln"> Group</span>` });
+    const logo    = el('span', { cls: 'footer-logo', html: `<img src="/assets/logoblanco.webp" style="max-width:200px" />` });
     const desc    = el('p',    { cls: 'footer-brand-desc', text: f.brand.desc });
     const socials = el('div',  { cls: 'footer-socials' });
     f.socials.forEach(({ icon, label, href }) => {
